@@ -1,0 +1,9 @@
+port: 8080
+refreshIntervalSeconds: 2
+
+logging:
+  level: info
+  format: json
+  output: stdout
+  # output: file
+  # filePath: ./logs/macmonitor.log

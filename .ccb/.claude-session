@@ -1,0 +1,19 @@
+{
+  "session_id": "ai-1773094605-7674",
+  "ccb_project_id": "7c85617cab8d4f1576fe340ff129f112dadd43a749fefed637982f159c749a15",
+  "work_dir": "/Users/myk/Desktop/111",
+  "work_dir_norm": "/Users/myk/Desktop/111",
+  "start_dir": "/Users/myk/Desktop/111",
+  "terminal": "tmux",
+  "active": true,
+  "started_at": "2026-03-10 05:32:07",
+  "updated_at": "2026-03-10 06:27:08",
+  "pane_id": "%52",
+  "pane_title_marker": "CCB-Claude",
+  "ended_at": "2026-03-10 06:16:46",
+  "claude_session_path": "/Users/myk/.claude/projects/-Users-myk-Desktop-111/0974ab12-c86a-48e3-ac1d-c316fa1976a3.jsonl",
+  "claude_session_id": "0974ab12-c86a-48e3-ac1d-c316fa1976a3",
+  "old_claude_session_id": "aa6999aa-681c-43e6-aab4-0fdc99600b70",
+  "old_claude_session_path": "/Users/myk/.claude/projects/-Users-myk-Desktop-111/aa6999aa-681c-43e6-aab4-0fdc99600b70.jsonl",
+  "old_updated_at": "2026-03-10 06:18:57"
+}
