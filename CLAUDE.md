@@ -1,7 +1,7 @@
 # MacMonitor 项目 Claude PM 职责
 
 **项目**: MacMonitor - macOS 系统监控 iOS App
-**当前阶段**: 阶段二已完成
+**当前阶段**: 阶段三已完成
 
 ---
 
@@ -16,19 +16,32 @@
 
 ### 阶段二：iOS 端基础架构 ✅ 完成
 - [x] Task 6: 创建 XcodeGen 项目配置
-- [x] Task 7: 实现数据模型 (与后端 JSON 匹配)
+- [x] Task 7: 实现数据模型
 - [x] Task 8: 实现网络服务层
 - [x] Task 9: 创建主题系统基础架构
 
-### 阶段三：皮肤系统
-- [ ] Task 10-14: 5套皮肤实现
-- [ ] Task 15: 主题管理器
+### 阶段三：皮肤系统 ✅ 完成
+- [x] Task 10: 赛博朋克皮肤
+- [x] Task 11: 可爱皮肤
+- [x] Task 12: 大海皮肤
+- [x] Task 13: 赛博少女皮肤
+- [x] Task 14: 田园皮肤
+- [x] Task 15: 主题预览组件
 
 ### 阶段四：UI 界面
-- [ ] Task 16-23: 各监控页面
+- [ ] Task 16: 实现仪表盘
+- [ ] Task 17: 实现 CPU 监控页面
+- [ ] Task 18: 实现内存监控页面
+- [ ] Task 19: 实现磁盘监控页面
+- [ ] Task 20: 实现网络监控页面
+- [ ] Task 21: 实现进程列表页面
+- [ ] Task 22: 实现应用列表页面
+- [ ] Task 23: 实现设置页面
 
 ### 阶段五：整合与测试
-- [ ] Task 24-26: 集成与测试
+- [ ] Task 24: 集成所有页面到 TabView
+- [ ] Task 25: 添加动画效果
+- [ ] Task 26: 测试与调试
 
 ---
 
@@ -54,7 +67,8 @@
 ├── docs/plans/
 │   ├── 2026-03-10-macmonitor-design.md
 │   ├── 2026-03-10-macmonitor-implementation-plan.md
-│   └── 2026-03-10-ios-infrastructure.md
+│   ├── 2026-03-10-ios-infrastructure.md
+│   └── 2026-03-10-theme-system.md
 ├── backend/                    # Go 后端
 │   ├── main.go
 │   ├── config/
@@ -65,19 +79,23 @@
 └── ios/MacMonitor/            # iOS 前端
     ├── project.yml
     ├── Sources/
-    │   ├── App/
-    │   ├── Models/
-    │   ├── Services/
-    │   └── Themes/
-    └── Resources/
+    │   ├── App/MacMonitorApp.swift
+    │   ├── ContentView.swift
+    │   ├── Models/ (7个模型文件)
+    │   ├── Services/ (APIClient, MonitorService)
+    │   ├── Themes/ (6套皮肤 + ThemeManager)
+    │   └── Views/ (ThemePreviewCard)
+    └── Resources/Assets.xcassets/
 ```
 
 ## 下一步
 
-继续 **阶段三：皮肤系统**
-- Task 10: 实现赛博朋克皮肤
-- Task 11: 实现可爱皮肤
-- Task 12: 实现大海皮肤
-- Task 13: 实现赛博少女皮肤
-- Task 14: 实现田园皮肤
-- Task 15: 实现主题管理器
+继续 **阶段四：UI 界面**
+- Task 16: 实现仪表盘
+- Task 17: 实现 CPU 监控页面
+- Task 18: 实现内存监控页面
+- Task 19: 实现磁盘监控页面
+- Task 20: 实现网络监控页面
+- Task 21: 实现进程列表页面
+- Task 22: 实现应用列表页面
+- Task 23: 实现设置页面
