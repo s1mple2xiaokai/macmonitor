@@ -1,7 +1,7 @@
 # MacMonitor 项目 Claude PM 职责
 
 **项目**: MacMonitor - macOS 系统监控 iOS App
-**当前阶段**: 阶段三已完成
+**当前阶段**: 阶段四已完成
 
 ---
 
@@ -28,15 +28,15 @@
 - [x] Task 14: 田园皮肤
 - [x] Task 15: 主题预览组件
 
-### 阶段四：UI 界面
-- [ ] Task 16: 实现仪表盘
-- [ ] Task 17: 实现 CPU 监控页面
-- [ ] Task 18: 实现内存监控页面
-- [ ] Task 19: 实现磁盘监控页面
-- [ ] Task 20: 实现网络监控页面
-- [ ] Task 21: 实现进程列表页面
-- [ ] Task 22: 实现应用列表页面
-- [ ] Task 23: 实现设置页面
+### 阶段四：UI 界面 ✅ 完成
+- [x] Task 16: 仪表盘
+- [x] Task 17: CPU 监控页面
+- [x] Task 18: 内存监控页面
+- [x] Task 19: 磁盘监控页面
+- [x] Task 20: 网络监控页面
+- [x] Task 21: 进程列表页面
+- [x] Task 22: 应用列表页面
+- [x] Task 23: 设置页面
 
 ### 阶段五：整合与测试
 - [ ] Task 24: 集成所有页面到 TabView
@@ -60,42 +60,9 @@
 | Codex | ✅ 已连接 |
 | Opencode | ❌ 未连接 |
 
-## 项目文件结构
-
-```
-/Users/myk/Desktop/111/
-├── docs/plans/
-│   ├── 2026-03-10-macmonitor-design.md
-│   ├── 2026-03-10-macmonitor-implementation-plan.md
-│   ├── 2026-03-10-ios-infrastructure.md
-│   └── 2026-03-10-theme-system.md
-├── backend/                    # Go 后端
-│   ├── main.go
-│   ├── config/
-│   ├── logger/
-│   ├── handlers/
-│   ├── models/
-│   └── collectors/
-└── ios/MacMonitor/            # iOS 前端
-    ├── project.yml
-    ├── Sources/
-    │   ├── App/MacMonitorApp.swift
-    │   ├── ContentView.swift
-    │   ├── Models/ (7个模型文件)
-    │   ├── Services/ (APIClient, MonitorService)
-    │   ├── Themes/ (6套皮肤 + ThemeManager)
-    │   └── Views/ (ThemePreviewCard)
-    └── Resources/Assets.xcassets/
-```
-
 ## 下一步
 
-继续 **阶段四：UI 界面**
-- Task 16: 实现仪表盘
-- Task 17: 实现 CPU 监控页面
-- Task 18: 实现内存监控页面
-- Task 19: 实现磁盘监控页面
-- Task 20: 实现网络监控页面
-- Task 21: 实现进程列表页面
-- Task 22: 实现应用列表页面
-- Task 23: 实现设置页面
+继续 **阶段五：整合与测试**
+- Task 24: 集成所有页面到 TabView
+- Task 25: 添加动画效果
+- Task 26: 测试与调试
