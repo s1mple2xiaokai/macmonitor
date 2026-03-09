@@ -39,6 +39,7 @@ struct DashboardView: View {
         }
         .background(theme.backgroundColor)
         .navigationTitle("仪表盘")
+        .themed(themeManager)
     }
 
     private func formatBytes(_ bytes: UInt64) -> String {

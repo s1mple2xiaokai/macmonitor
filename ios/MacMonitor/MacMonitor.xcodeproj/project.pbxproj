@@ -18,6 +18,7 @@
 		275DEC284061AE966063BEF8 /* MemoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BBD29BD3F636904B2D618B /* MemoryViewModel.swift */; };
 		40AF648B2CC605FE34DB7643 /* ProcessListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CCB7800C7949C7B6FF7877 /* ProcessListView.swift */; };
 		44258E8CA5B2265ADE57C58B /* MonitorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6E51CEE5D00CF9A7F95D29 /* MonitorService.swift */; };
+		44F6213F79F6D94891846341 /* ThemedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9DC3461A9BB1D278039A6D /* ThemedView.swift */; };
 		453225A7515EE74E686B1FB0 /* CPUView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781BB675B608A3C72AB6C4E /* CPUView.swift */; };
 		45B1CAFB4F3BA4844B03A945 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED46B81AD6986300F346F3E /* AppInfo.swift */; };
 		552D834D47B9A5676B85B1A7 /* CPUStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051154BB7D38CF7AF5346F04 /* CPUStats.swift */; };
@@ -64,6 +65,7 @@
 		65416532BBB5B19CD486C458 /* NetworkStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStats.swift; sourceTree = "<group>"; };
 		6612664B3778E1FDFF605B1F /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		6B6E51CEE5D00CF9A7F95D29 /* MonitorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorService.swift; sourceTree = "<group>"; };
+		6E9DC3461A9BB1D278039A6D /* ThemedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedView.swift; sourceTree = "<group>"; };
 		6EC07AB82029C041845C4021 /* PastoralTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastoralTheme.swift; sourceTree = "<group>"; };
 		819C7A27D7F46AC4406AACF7 /* ThemePreviewCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePreviewCard.swift; sourceTree = "<group>"; };
 		83447A2EA2DAB6BA6E6B34E4 /* MemoryStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStats.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				E4CCB7800C7949C7B6FF7877 /* ProcessListView.swift */,
 				FDADC2AC1A413AD728C77C4E /* SettingsView.swift */,
 				8A50E9F1BC3479776ADD852E /* StatCard.swift */,
+				6E9DC3461A9BB1D278039A6D /* ThemedView.swift */,
 				819C7A27D7F46AC4406AACF7 /* ThemePreviewCard.swift */,
 			);
 			path = Views;
@@ -315,6 +318,7 @@
 				9DB5870F2E446E7040338688 /* Theme.swift in Sources */,
 				1351EF1D13C90B090D0A3861 /* ThemeManager.swift in Sources */,
 				FE727F573277AC49B0C6C1F3 /* ThemePreviewCard.swift in Sources */,
+				44F6213F79F6D94891846341 /* ThemedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
