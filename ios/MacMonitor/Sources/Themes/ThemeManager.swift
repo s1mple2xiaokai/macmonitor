@@ -12,6 +12,11 @@ class ThemeManager: ObservableObject {
 
     let availableThemes: [any Theme] = [
         DefaultTheme(),
+        CyberpunkTheme(),
+        CuteTheme(),
+        OceanTheme(),
+        CyberGirlTheme(),
+        PastoralTheme(),
     ]
 
     private init() {

@@ -7,21 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		048CBCAF79184B184EDC165A /* CyberGirlTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903E0FB6F0B9EE4941DDBACD /* CyberGirlTheme.swift */; };
+		093CDC078ACC7FF4A4BA6A8D /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F760FF71A7DDBE84754AF61 /* Color+Hex.swift */; };
 		10ECDE45600A9283728EE5B9 /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3327D1E8842D0740D49DF033 /* DefaultTheme.swift */; };
 		1351EF1D13C90B090D0A3861 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612664B3778E1FDFF605B1F /* ThemeManager.swift */; };
+		184CE45BE7171BA728D57728 /* OceanTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01F96D6D15A23A03CD3939F /* OceanTheme.swift */; };
+		25EC37D1B230603CACBF9598 /* PastoralTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC07AB82029C041845C4021 /* PastoralTheme.swift */; };
 		44258E8CA5B2265ADE57C58B /* MonitorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6E51CEE5D00CF9A7F95D29 /* MonitorService.swift */; };
 		45B1CAFB4F3BA4844B03A945 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED46B81AD6986300F346F3E /* AppInfo.swift */; };
 		552D834D47B9A5676B85B1A7 /* CPUStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051154BB7D38CF7AF5346F04 /* CPUStats.swift */; };
 		5D8D17BDF278B5C3273D0249 /* SystemStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E15DE66F46CE7EB7B7959 /* SystemStats.swift */; };
 		60C7AF40A7BE7950F2C08EB7 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4663F53DFFD5A41AF28E887F /* APIClient.swift */; };
+		81471F6AB04A668455D45AC2 /* CyberpunkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F724F201E1D493828B67410 /* CyberpunkTheme.swift */; };
 		88387CDAE2AC1CC74EF89B57 /* MacMonitorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEA6BD38BA8D887B1DB64A9 /* MacMonitorApp.swift */; };
 		9DB5870F2E446E7040338688 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FCD6C372A61E5212244A87 /* Theme.swift */; };
 		B1E03238F9A6DEF013FF9F94 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD639DB4DB8C5E3EB48AE03 /* ContentView.swift */; };
 		C070B67C991212E93E82813D /* DiskStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF4BD99CF315E7F94007070 /* DiskStats.swift */; };
 		C0B5C11294E99F1BEEA7BC9D /* NetworkStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65416532BBB5B19CD486C458 /* NetworkStats.swift */; };
+		D6B524851760BF7096E231A8 /* CuteTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B32A37F539282F93F50B8F /* CuteTheme.swift */; };
 		DC8FB16423D13161545B4F13 /* MemoryStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83447A2EA2DAB6BA6E6B34E4 /* MemoryStats.swift */; };
 		E5E4CE93D5C99DD6068737C0 /* ProcessInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551C52F61F3345FBE641DB33 /* ProcessInfo.swift */; };
 		E8559FF5FC09B7F87688E1DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B44606EFD3CFC6F5B9CE357 /* Assets.xcassets */; };
+		FE727F573277AC49B0C6C1F3 /* ThemePreviewCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819C7A27D7F46AC4406AACF7 /* ThemePreviewCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,16 +36,23 @@
 		0B44606EFD3CFC6F5B9CE357 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2ED46B81AD6986300F346F3E /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		3327D1E8842D0740D49DF033 /* DefaultTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
+		43B32A37F539282F93F50B8F /* CuteTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuteTheme.swift; sourceTree = "<group>"; };
 		4663F53DFFD5A41AF28E887F /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		4F4E15DE66F46CE7EB7B7959 /* SystemStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemStats.swift; sourceTree = "<group>"; };
 		551C52F61F3345FBE641DB33 /* ProcessInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessInfo.swift; sourceTree = "<group>"; };
+		5F760FF71A7DDBE84754AF61 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		65416532BBB5B19CD486C458 /* NetworkStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStats.swift; sourceTree = "<group>"; };
 		6612664B3778E1FDFF605B1F /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		6B6E51CEE5D00CF9A7F95D29 /* MonitorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorService.swift; sourceTree = "<group>"; };
+		6EC07AB82029C041845C4021 /* PastoralTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastoralTheme.swift; sourceTree = "<group>"; };
+		819C7A27D7F46AC4406AACF7 /* ThemePreviewCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePreviewCard.swift; sourceTree = "<group>"; };
 		83447A2EA2DAB6BA6E6B34E4 /* MemoryStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStats.swift; sourceTree = "<group>"; };
+		903E0FB6F0B9EE4941DDBACD /* CyberGirlTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyberGirlTheme.swift; sourceTree = "<group>"; };
 		9AF4BD99CF315E7F94007070 /* DiskStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStats.swift; sourceTree = "<group>"; };
+		9F724F201E1D493828B67410 /* CyberpunkTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyberpunkTheme.swift; sourceTree = "<group>"; };
 		ADD639DB4DB8C5E3EB48AE03 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ADEA6BD38BA8D887B1DB64A9 /* MacMonitorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacMonitorApp.swift; sourceTree = "<group>"; };
+		C01F96D6D15A23A03CD3939F /* OceanTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OceanTheme.swift; sourceTree = "<group>"; };
 		F4FCD6C372A61E5212244A87 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		F5EC59DCDA5FABDA409CDBCB /* MacMonitor.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = MacMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -75,6 +89,7 @@
 				22904657F0E5F11A47E4D714 /* Models */,
 				E8026B2AC2CAC5706185B684 /* Services */,
 				57EDD78A873355B60BBC905A /* Themes */,
+				84A646021FCA4D6702486FA2 /* Views */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -90,11 +105,25 @@
 		57EDD78A873355B60BBC905A /* Themes */ = {
 			isa = PBXGroup;
 			children = (
+				5F760FF71A7DDBE84754AF61 /* Color+Hex.swift */,
+				43B32A37F539282F93F50B8F /* CuteTheme.swift */,
+				903E0FB6F0B9EE4941DDBACD /* CyberGirlTheme.swift */,
+				9F724F201E1D493828B67410 /* CyberpunkTheme.swift */,
 				3327D1E8842D0740D49DF033 /* DefaultTheme.swift */,
+				C01F96D6D15A23A03CD3939F /* OceanTheme.swift */,
+				6EC07AB82029C041845C4021 /* PastoralTheme.swift */,
 				F4FCD6C372A61E5212244A87 /* Theme.swift */,
 				6612664B3778E1FDFF605B1F /* ThemeManager.swift */,
 			);
 			path = Themes;
+			sourceTree = "<group>";
+		};
+		84A646021FCA4D6702486FA2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				819C7A27D7F46AC4406AACF7 /* ThemePreviewCard.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		BB4D0C0232F676129DD98CE6 /* Resources */ = {
@@ -196,17 +225,24 @@
 				60C7AF40A7BE7950F2C08EB7 /* APIClient.swift in Sources */,
 				45B1CAFB4F3BA4844B03A945 /* AppInfo.swift in Sources */,
 				552D834D47B9A5676B85B1A7 /* CPUStats.swift in Sources */,
+				093CDC078ACC7FF4A4BA6A8D /* Color+Hex.swift in Sources */,
 				B1E03238F9A6DEF013FF9F94 /* ContentView.swift in Sources */,
+				D6B524851760BF7096E231A8 /* CuteTheme.swift in Sources */,
+				048CBCAF79184B184EDC165A /* CyberGirlTheme.swift in Sources */,
+				81471F6AB04A668455D45AC2 /* CyberpunkTheme.swift in Sources */,
 				10ECDE45600A9283728EE5B9 /* DefaultTheme.swift in Sources */,
 				C070B67C991212E93E82813D /* DiskStats.swift in Sources */,
 				88387CDAE2AC1CC74EF89B57 /* MacMonitorApp.swift in Sources */,
 				DC8FB16423D13161545B4F13 /* MemoryStats.swift in Sources */,
 				44258E8CA5B2265ADE57C58B /* MonitorService.swift in Sources */,
 				C0B5C11294E99F1BEEA7BC9D /* NetworkStats.swift in Sources */,
+				184CE45BE7171BA728D57728 /* OceanTheme.swift in Sources */,
+				25EC37D1B230603CACBF9598 /* PastoralTheme.swift in Sources */,
 				E5E4CE93D5C99DD6068737C0 /* ProcessInfo.swift in Sources */,
 				5D8D17BDF278B5C3273D0249 /* SystemStats.swift in Sources */,
 				9DB5870F2E446E7040338688 /* Theme.swift in Sources */,
 				1351EF1D13C90B090D0A3861 /* ThemeManager.swift in Sources */,
+				FE727F573277AC49B0C6C1F3 /* ThemePreviewCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
