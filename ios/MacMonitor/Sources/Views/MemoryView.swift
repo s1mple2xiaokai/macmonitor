@@ -3,6 +3,8 @@ import SwiftUI
 struct MemoryView: View {
     @StateObject private var viewModel = MemoryViewModel()
     @ObservedObject var themeManager: ThemeManager
+    @ObservedObject var monitorService = MonitorService.shared
+    @State private var isCleaningUp = false
 
     var body: some View {
         let theme = themeManager.currentTheme
@@ -29,6 +31,41 @@ struct MemoryView: View {
                 .padding()
                 .background(theme.cardBackgroundColor)
                 .cornerRadius(theme.cardCornerRadius)
+
+                // 清理内存按钮
+                Button(action: {
+                    Task {
+                        isCleaningUp = true
+                        await monitorService.cleanupMemory()
+                        isCleaningUp = false
+                    }
+                }) {
+                    HStack {
+                        if isCleaningUp {
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                                .scaleEffect(0.8)
+                        } else {
+                            Image(systemName: "trash")
+                        }
+                        Text(isCleaningUp ? "清理中..." : "清理内存")
+                    }
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(theme.primaryColor)
+                    .cornerRadius(12)
+                }
+                .disabled(isCleaningUp)
+
+                // 显示错误消息
+                if let error = monitorService.errorMessage {
+                    Text(error)
+                        .font(.caption)
+                        .foregroundColor(.red)
+                        .padding()
+                }
             }
             .padding()
         }

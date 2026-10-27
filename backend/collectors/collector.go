@@ -2,7 +2,6 @@ package collectors
 
 import (
 	"context"
-	"errors"
 	"time"
 
 	"macmonitor/models"
@@ -17,70 +16,68 @@ func GetAllStats() (models.SystemStats, error) {
 }
 
 func GetAllStatsWithContext(ctx context.Context) (models.SystemStats, error) {
-	var collectErr error
 	stats := models.SystemStats{
 		Timestamp: time.Now().UTC(),
+		CPU:       models.CPUStats{ModelName: "unknown"},
+		Disk:      make([]models.DiskStats, 0),
+		Network:   make([]models.NetworkStats, 0),
+		Processes: make([]models.ProcessInfo, 0),
+		Apps:      make([]models.AppInfo, 0),
 	}
 
 	if err := ctx.Err(); err != nil {
-		return stats, errors.Join(collectErr, err)
+		return stats, err
 	}
 
 	cpuStats, err := GetCPUStats()
-	if err != nil {
-		collectErr = errors.Join(collectErr, err)
+	if err == nil {
+		stats.CPU = cpuStats
 	}
-	stats.CPU = cpuStats
 
 	if err := ctx.Err(); err != nil {
-		return stats, errors.Join(collectErr, err)
+		return stats, err
 	}
 
 	memoryStats, err := GetMemoryStats()
-	if err != nil {
-		collectErr = errors.Join(collectErr, err)
+	if err == nil {
+		stats.Memory = memoryStats
 	}
-	stats.Memory = memoryStats
 
 	if err := ctx.Err(); err != nil {
-		return stats, errors.Join(collectErr, err)
+		return stats, err
 	}
 
 	diskStats, err := GetDiskStats()
-	if err != nil {
-		collectErr = errors.Join(collectErr, err)
+	if err == nil {
+		stats.Disk = diskStats
 	}
-	stats.Disk = diskStats
 
 	if err := ctx.Err(); err != nil {
-		return stats, errors.Join(collectErr, err)
+		return stats, err
 	}
 
 	networkStats, err := GetNetworkStats()
-	if err != nil {
-		collectErr = errors.Join(collectErr, err)
+	if err == nil {
+		stats.Network = networkStats
 	}
-	stats.Network = networkStats
 
 	if err := ctx.Err(); err != nil {
-		return stats, errors.Join(collectErr, err)
+		return stats, err
 	}
 
 	processStats, err := GetProcessStats()
-	if err != nil {
-		collectErr = errors.Join(collectErr, err)
+	if err == nil {
+		stats.Processes = processStats
 	}
-	stats.Processes = processStats
 
 	if err := ctx.Err(); err != nil {
-		return stats, errors.Join(collectErr, err)
+		return stats, err
 	}
 
 	appStats, err := GetAppStats()
-	if err != nil {
-		collectErr = errors.Join(collectErr, err)
+	if err == nil {
+		stats.Apps = appStats
 	}
-	stats.Apps = appStats
 
-	return stats, collectErr
+	return stats, nil
 }

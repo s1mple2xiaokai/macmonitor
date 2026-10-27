@@ -15,6 +15,7 @@ import (
 type Config struct {
 	Port            string
 	RefreshInterval time.Duration
+	TerminalToken   string
 	LogLevel        string
 	LogFormat       string
 	LogOutput       string
@@ -22,8 +23,9 @@ type Config struct {
 }
 
 type fileConfig struct {
-	Port                   int `yaml:"port"`
-	RefreshIntervalSeconds int `yaml:"refreshIntervalSeconds"`
+	Port                   int    `yaml:"port"`
+	RefreshIntervalSeconds int    `yaml:"refreshIntervalSeconds"`
+	TerminalToken          string `yaml:"terminalToken"`
 	Logging                struct {
 		Level    string `yaml:"level"`
 		Format   string `yaml:"format"`
@@ -36,6 +38,7 @@ func Load() (Config, error) {
 	cfg := Config{
 		Port:            "8080",
 		RefreshInterval: 2 * time.Second,
+		TerminalToken:   "",
 		LogLevel:        "info",
 		LogFormat:       "json",
 		LogOutput:       "stdout",
@@ -63,6 +66,9 @@ func Load() (Config, error) {
 		} else {
 			cfg.RefreshInterval = time.Duration(seconds) * time.Second
 		}
+	}
+	if raw := strings.TrimSpace(os.Getenv("WEBTERM_TOKEN")); raw != "" {
+		cfg.TerminalToken = raw
 	}
 
 	if raw := strings.TrimSpace(os.Getenv("LOG_LEVEL")); raw != "" {
@@ -127,6 +133,9 @@ func applyYAMLConfig(path string, cfg *Config) error {
 	}
 	if fc.RefreshIntervalSeconds > 0 {
 		cfg.RefreshInterval = time.Duration(fc.RefreshIntervalSeconds) * time.Second
+	}
+	if strings.TrimSpace(fc.TerminalToken) != "" {
+		cfg.TerminalToken = strings.TrimSpace(fc.TerminalToken)
 	}
 	if strings.TrimSpace(fc.Logging.Level) != "" {
 		cfg.LogLevel = strings.ToLower(strings.TrimSpace(fc.Logging.Level))

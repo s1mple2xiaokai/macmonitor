@@ -1,8 +1,8 @@
 import Foundation
 
 struct MemoryStats: Codable {
-    let total: UInt64
-    let used: UInt64
-    let usedPercent: Double
-    let free: UInt64
+    var total: UInt64 = 0
+    var used: UInt64 = 0
+    var usedPercent: Double = 0
+    var free: UInt64 = 0
 }

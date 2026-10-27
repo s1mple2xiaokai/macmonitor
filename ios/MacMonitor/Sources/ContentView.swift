@@ -57,6 +57,13 @@ struct ContentView: View {
             }
 
             NavigationStack {
+                TerminalView()
+            }
+            .tabItem {
+                Label("终端", systemImage: "terminal")
+            }
+
+            NavigationStack {
                 SettingsView(themeManager: themeManager)
             }
             .tabItem {

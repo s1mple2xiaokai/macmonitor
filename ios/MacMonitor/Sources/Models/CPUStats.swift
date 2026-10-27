@@ -1,7 +1,7 @@
 import Foundation
 
 struct CPUStats: Codable {
-    let usagePercent: Double
-    let cores: Int
-    let modelName: String?
+    var usagePercent: Double = 0
+    var cores: Int = 0
+    var modelName: String?
 }

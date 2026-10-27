@@ -16,6 +16,8 @@ func RegisterAPIRoutes(r *mux.Router) {
 	api.Use(loggingMiddleware)
 	api.Use(corsMiddleware)
 
+	api.HandleFunc("/terminal", terminalWebSocketHandler).Methods(http.MethodGet)
+	api.HandleFunc("/memory/cleanup", clearMemoryCacheHandler).Methods(http.MethodPost, http.MethodOptions)
 	api.HandleFunc("/stats", getAllStatsHandler).Methods(http.MethodGet, http.MethodOptions)
 	api.HandleFunc("/cpu", getCPUStatsHandler).Methods(http.MethodGet, http.MethodOptions)
 	api.HandleFunc("/memory", getMemoryStatsHandler).Methods(http.MethodGet, http.MethodOptions)
@@ -138,8 +140,8 @@ func writeJSONError(w http.ResponseWriter, status int, message string) {
 func corsMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Origin", "*")
-		w.Header().Set("Access-Control-Allow-Methods", "GET, OPTIONS")
-		w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
+		w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+		w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Terminal-Token, Sec-WebSocket-Protocol")
 
 		if r.Method == http.MethodOptions {
 			w.WriteHeader(http.StatusNoContent)

@@ -36,12 +36,18 @@ func main() {
 	if cfgErr != nil {
 		log.Warn().Err(cfgErr).Msg("configuration loaded with validation warnings; defaults were applied")
 	}
+	handlers.SetTerminalToken(cfg.TerminalToken)
 
 	r := mux.NewRouter()
 	r.HandleFunc("/api/health", healthHandler(cfg.RefreshInterval)).Methods(http.MethodGet)
+	r.HandleFunc("/terminal/ws", handlers.TerminalWebSocketHandler).Methods(http.MethodGet, http.MethodOptions)
+	r.HandleFunc("/terminal/ws/", handlers.TerminalWebSocketHandler).Methods(http.MethodGet, http.MethodOptions)
+	r.HandleFunc("/api/terminal/ws", handlers.TerminalWebSocketHandler).Methods(http.MethodGet, http.MethodOptions)
+	r.HandleFunc("/api/terminal/ws/", handlers.TerminalWebSocketHandler).Methods(http.MethodGet, http.MethodOptions)
 
 	// 注册 API 路由
 	handlers.RegisterAPIRoutes(r)
+	handlers.RegisterTerminalRoutes(r)
 
 	addr := ":" + cfg.Port
 
@@ -75,15 +81,15 @@ func healthHandler(refreshInterval time.Duration) http.HandlerFunc {
 			status = "degraded"
 		}
 
-			resp := healthResponse{
-				Status:          status,
+		resp := healthResponse{
+			Status:          status,
 			Timestamp:       time.Now().UTC().Format(time.RFC3339),
 			RefreshInterval: refreshInterval.String(),
 		}
 
-			w.Header().Set("Content-Type", "application/json")
-			if err := json.NewEncoder(w).Encode(resp); err != nil {
-				log.Error().Err(err).Msg("failed to encode health response")
-			}
+		w.Header().Set("Content-Type", "application/json")
+		if err := json.NewEncoder(w).Encode(resp); err != nil {
+			log.Error().Err(err).Msg("failed to encode health response")
 		}
 	}
+}

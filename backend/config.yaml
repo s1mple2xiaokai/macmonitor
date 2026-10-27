@@ -1,5 +1,6 @@
 port: 8080
 refreshIntervalSeconds: 2
+terminalToken: "macmonitor123"
 
 logging:
   level: info

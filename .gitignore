@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Xcode
+*.xcuserstate
+xcuserdata/
+*.xcworkspace/xcuserdata/
+DerivedData/
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+build/
+
+# Go
+backend/macmonitor
+backend/*.log
+
+# Cloudflare tunnel binary (large binary, not source)
+cloudflared/cloudflared
+
+# CCB / local tool internals
+.ccb/
+CLAUDE.md

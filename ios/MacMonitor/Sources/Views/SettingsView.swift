@@ -3,16 +3,18 @@ import SwiftUI
 struct SettingsView: View {
     @ObservedObject var themeManager: ThemeManager
     @ObservedObject var monitorService = MonitorService.shared
+    @ObservedObject var terminalConfig = TerminalConfig.shared
 
     @State private var serverAddress: String = ""
     @State private var refreshInterval: Double = 2.0
+    @State private var terminalToken: String = ""
 
     var body: some View {
         let theme = themeManager.currentTheme
 
         List {
             Section {
-                ForEach(themeManager.availableThemes, id: \.id) { themeItem in
+                ForEach(Array(themeManager.availableThemes.enumerated()), id: \.offset) { index, themeItem in
                     Button(action: {
                         themeManager.setTheme(themeItem)
                     }) {
@@ -44,7 +46,7 @@ struct SettingsView: View {
                         .textFieldStyle(.roundedBorder)
                         .keyboardType(.URL)
                         .autocapitalization(.none)
-                        .onChange(of: serverAddress) { _, newValue in
+                        .onChange(of: serverAddress) { newValue in
                             monitorService.updateServerAddress(newValue)
                         }
                 }
@@ -53,12 +55,46 @@ struct SettingsView: View {
                     Text("刷新间隔: \(Int(refreshInterval))秒")
                         .foregroundColor(theme.primaryTextColor)
                     Slider(value: $refreshInterval, in: 1...10, step: 1)
-                        .onChange(of: refreshInterval) { _, newValue in
+                        .onChange(of: refreshInterval) { newValue in
                             monitorService.updateRefreshInterval(newValue)
                         }
                 }
             } header: {
                 Text("连接")
+                    .foregroundColor(theme.secondaryTextColor)
+            }
+
+            Section {
+                HStack {
+                    Text("局域网模式")
+                        .foregroundColor(theme.primaryTextColor)
+                    Spacer()
+                    Toggle("", isOn: $terminalConfig.useLocalNetwork)
+                        .labelsHidden()
+                }
+
+                HStack {
+                    Text("终端 Token")
+                        .foregroundColor(theme.primaryTextColor)
+                    Spacer()
+                    SecureField("token", text: $terminalToken)
+                        .textFieldStyle(.roundedBorder)
+                        .onChange(of: terminalToken) { newValue in
+                            terminalConfig.token = newValue
+                        }
+                }
+
+                HStack {
+                    Text("终端地址")
+                        .foregroundColor(theme.primaryTextColor)
+                    Spacer()
+                    TextField("192.168.1.x:8080", text: $terminalConfig.host)
+                        .textFieldStyle(.roundedBorder)
+                        .keyboardType(.URL)
+                        .disabled(terminalConfig.useLocalNetwork)
+                }
+            } header: {
+                Text("终端")
                     .foregroundColor(theme.secondaryTextColor)
             }
 
@@ -91,6 +127,7 @@ struct SettingsView: View {
         .navigationTitle("设置")
         .onAppear {
             serverAddress = monitorService.serverAddress
+            terminalToken = terminalConfig.token
         }
     }
 }
